@@ -1,0 +1,11 @@
+{
+  "name": "simple-calculator-js",
+  "version": "2.0.0",
+  "description": "Calculator in plain HTML, CSS and JavaScript with a safe expression parser",
+  "private": true,
+  "scripts": {
+    "test": "node --test"
+  },
+  "author": "Lucas Guilherme Brito",
+  "license": "MIT"
+}

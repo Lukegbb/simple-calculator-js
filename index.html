@@ -3,34 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora Simples</title>
+    <title>Simple Calculator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="calculator">
-        <input type="text" id="display" disabled>
+    <main class="calculator" aria-label="Calculator">
+        <div id="history" class="history" aria-live="polite"></div>
+        <input type="text" id="display" aria-label="Display" readonly>
         <div class="buttons">
-            <button onclick="clearDisplay()">C</button>
-            <button onclick="deleteChar()">←</button>
-            <button onclick="appendToDisplay('%')">%</button>
-            <button onclick="appendToDisplay('/')">/</button>
-            <button onclick="appendToDisplay('7')">7</button>
-            <button onclick="appendToDisplay('8')">8</button>
-            <button onclick="appendToDisplay('9')">9</button>
-            <button onclick="appendToDisplay('x')">x</button>
-            <button onclick="appendToDisplay('4')">4</button>
-            <button onclick="appendToDisplay('5')">5</button>
-            <button onclick="appendToDisplay('6')">6</button>
-            <button onclick="appendToDisplay('-')">-</button>
-            <button onclick="appendToDisplay('1')">1</button>
-            <button onclick="appendToDisplay('2')">2</button>
-            <button onclick="appendToDisplay('3')">3</button>
-            <button onclick="appendToDisplay('+')">+</button>
-            <button onclick="appendToDisplay('0')" class="zero">0</button>
-            <button onclick="appendToDisplay('.')">.</button>
-            <button onclick="calculate()">=</button>
+            <button data-action="clear" class="fn">C</button>
+            <button data-action="delete" class="fn" aria-label="Delete">&larr;</button>
+            <button data-value="(" class="fn">(</button>
+            <button data-value=")" class="fn">)</button>
+            <button data-value="7">7</button>
+            <button data-value="8">8</button>
+            <button data-value="9">9</button>
+            <button data-value="/" class="op" aria-label="Divide">&divide;</button>
+            <button data-value="4">4</button>
+            <button data-value="5">5</button>
+            <button data-value="6">6</button>
+            <button data-value="x" class="op" aria-label="Multiply">&times;</button>
+            <button data-value="1">1</button>
+            <button data-value="2">2</button>
+            <button data-value="3">3</button>
+            <button data-value="-" class="op">&minus;</button>
+            <button data-value="0">0</button>
+            <button data-value=".">.</button>
+            <button data-value="%" class="fn">%</button>
+            <button data-value="+" class="op">+</button>
+            <button data-action="equals" class="equals">=</button>
         </div>
-    </div>
+        <p class="hint">Keyboard works too: numbers, + - * /, Enter, Backspace, Esc</p>
+    </main>
+    <script src="calculator.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
